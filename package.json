@@ -15,7 +15,9 @@
     "@tsparticles/slim": "^3.3.0",
     "next": "14.1.4",
     "react": "^18",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
+    "react-icons": "^5.0.1",
     "react-particles": "^2.12.2",
     "tsparticles": "^3.3.0"
   },
