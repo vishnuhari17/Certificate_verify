@@ -2,7 +2,7 @@
 
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Particle from "./Particle";
+import Particle from "../app/Particle";
 
 const inter = Inter({ subsets: ["latin"] });
 
