@@ -1,91 +1,95 @@
 'use client'
 
-import { useEffect } from "react";
-import 'particles.js/particles';
-const particlesJS = global.window.particlesJS;
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useMemo, useState } from "react";
+import { loadSlim } from "@tsparticles/slim";
 
-const ParticleEffect = () => {
+const ParticlesComponent = (props) => {
+  const [init, setInit] = useState(false);
+  // this should be run only once per application lifetime
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Initialize the particle effect
-      particlesJS('particles-js', {
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: "#ffffff",
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000",
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-          },
-          size: {
-            value: 3,
-            random: true,
-          },
-          line_linked: {
-            enable: false,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            out_mode: "out",
-          },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-          },
-          modes: {
-            grab: {
-              distance: 400,
-              line_linked: {
-                opacity: 1,
-              },
-            },
-            repulse: {
-              distance: 200,
-            },
-            push: {
-              particles_nb: 4,
-            },
-            remove: {
-              particles_nb: 2,
-            },
-          },
-        },
-      });
-    }
+    initParticlesEngine(async (engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadAll(engine);
+      //await loadFull(engine);
+      await loadSlim(engine);
+      //await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  return (
-    <div id="particles-js" className="absolute w-screen h-screen max-w-full"></div>
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
+
+  const options = useMemo(
+    () => ({
+      background: {
+      },
+      fpsLimit: 120,
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: "repulse",
+          },
+          onHover: {
+            enable: true,
+            mode: 'push',
+          },
+        },
+        modes: {
+          push: {
+            distance: 200,
+            duration: 15,
+          },
+          grab: {
+            distance: 150,
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#FFFFFF",
+        },
+        
+        move: {
+          direction: "none",
+          enable: true,
+          outModes: {
+            default: "bounce",
+          },
+          random: true,
+          speed: 1,
+          straight: false,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 150,
+        },
+        opacity: {
+          value: 1.0,
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          value: { min: 1, max: 3 },
+        },
+      },
+      detectRetina: true,
+    }),
+    [],
   );
+
+
+  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
 };
 
-export default ParticleEffect;
+export default ParticlesComponent;
