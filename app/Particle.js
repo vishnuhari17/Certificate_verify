@@ -1,95 +1,138 @@
-'use client'
+"use client"
 
+import React, { useState, useEffect } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
-const ParticlesComponent = (props) => {
-  const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
-      await loadSlim(engine);
-      //await loadBasic(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
+const ParticlesComponent = () => {
+    const [loading, setLoading] = useState(true);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+    useEffect(() => {
+        // Initialize the particles engine and set a 3-second delay before setting loading to false
+        initParticlesEngine(async (engine) => {
+            await loadSlim(engine);
+        }).then(() => {
+            // Set a 3-second delay before updating the loading state
+            setTimeout(() => {
+                setLoading(false);
+            }, 3300);
+        });
+    }, []);
 
+    const particlesOptions = {
+        background: {},
+        fpsLimit: 120,
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: true,
+                    mode: "repulse",
+                },
+                onHover: {
+                    enable: true,
+                    mode: "push",
+                },
+            },
+            modes: {
+                push: {
+                    distance: 200,
+                    duration: 15,
+                },
+                grab: {
+                    distance: 150,
+                },
+            },
+        },
+        particles: {
+            color: {
+                value: "#FFFFFF",
+            },
+            move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                    default: "bounce",
+                },
+                random: true,
+                speed: 1,
+                straight: false,
+            },
+            number: {
+                density: {
+                    enable: true,
+                },
+                value: 150,
+            },
+            opacity: {
+                value: 1.0,
+            },
+            shape: {
+                type: "circle",
+            },
+            size: {
+                value: { min: 1, max: 3 },
+            },
+        },
+        detectRetina: true,
+    };
 
-  const options = useMemo(
-    () => ({
-      background: {
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "repulse",
-          },
-          onHover: {
-            enable: true,
-            mode: 'push',
-          },
-        },
-        modes: {
-          push: {
-            distance: 200,
-            duration: 15,
-          },
-          grab: {
-            distance: 150,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: "#FFFFFF",
-        },
-        
-        move: {
-          direction: "none",
-          enable: true,
-          outModes: {
-            default: "bounce",
-          },
-          random: true,
-          speed: 1,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 150,
-        },
-        opacity: {
-          value: 1.0,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 3 },
-        },
-      },
-      detectRetina: true,
-    }),
-    [],
-  );
-
-
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+    return (
+        <div>
+            {loading ? (
+                // Loading screen
+                <div className="bg-black h-screen w-screen flex items-center justify-center flex-col max-w-full z-50 absolute">
+                    <svg width="80" height="80" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#d38bfc">
+                        <g fill="none" fill-rule="evenodd">
+                            <g transform="translate(1 1)" stroke-width="2">
+                                <circle cx="5" cy="50" r="5">
+                                    <animate attributeName="cy"
+                                        begin="0s" dur="2.2s"
+                                        values="50;5;50;50"
+                                        calcMode="linear"
+                                        repeatCount="indefinite" />
+                                    <animate attributeName="cx"
+                                        begin="0s" dur="2.2s"
+                                        values="5;27;49;5"
+                                        calcMode="linear"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="27" cy="5" r="5">
+                                    <animate attributeName="cy"
+                                        begin="0s" dur="2.2s"
+                                        from="5" to="5"
+                                        values="5;50;50;5"
+                                        calcMode="linear"
+                                        repeatCount="indefinite" />
+                                    <animate attributeName="cx"
+                                        begin="0s" dur="2.2s"
+                                        from="27" to="27"
+                                        values="27;49;5;27"
+                                        calcMode="linear"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="49" cy="50" r="5">
+                                    <animate attributeName="cy"
+                                        begin="0s" dur="2.2s"
+                                        values="50;50;5;50"
+                                        calcMode="linear"
+                                        repeatCount="indefinite" />
+                                    <animate attributeName="cx"
+                                        from="49" to="49"
+                                        begin="0s" dur="2.2s"
+                                        values="49;5;27;49"
+                                        calcMode="linear"
+                                        repeatCount="indefinite" />
+                                </circle>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            ) : (
+                // Particles component
+                <Particles options={particlesOptions} />
+            )}
+        </div>
+    );
 };
 
 export default ParticlesComponent;

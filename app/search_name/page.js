@@ -8,7 +8,7 @@ const Page = () => {
     return (
         <>
             <div className='bg-[#000000] h-screen w-screen flex items-center justify-cente flex-col max-w-full'>
-                <div className="container bg-[#ffffff9f] rounded-3xl shadow-md relative w-[760px] mt-44 max-w-full min-h-[480px] mt-28 overflow-y-auto">
+                <div className="container bg-[#ffffff9f] rounded-3xl shadow-md relative w-[760px] max-w-full min-h-[480px] mt-28 overflow-y-auto">
                     <div className='form-container verify form-container flex items-center justify-center flex-col py-[40px] h-full absolute left-1/2 text-[#14213d]'>
                         <form onSubmit={(e) => {
                             e.preventDefault();
