@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Certificate Verification",
-  description: "Verify Certificates Instantly: Search by Name ",
+  description: "Verify Certificates Instantly: Search by Name "
 };
 
 export default function RootLayout({ children }) {
