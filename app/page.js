@@ -7,17 +7,17 @@ const Page = () => {
     return (
         <>
             <div className='bg-[#000000] h-screen w-screen flex items-center justify-cente flex-col max-w-full '>
-                <div className="container bg-[#ffffff9f] rounded-3xl shadow-md relative w-[760px] max-w-full min-h-[480px] mt-28 overflow-y-auto">
-                    <div className='form-container verify form-container flex items-center justify-center flex-col py-[40px] h-full absolute w-1/2 text-[#14213d]'>
+                <div className="container bg-[#bbb6b6c9] rounded-3xl shadow-md relative w-[760px] max-w-full min-h-[480px] mt-28 overflow-y-auto">
+                    <div className='form-container verify form-container flex items-center justify-center flex-col py-[40px] h-full absolute w-1/2 text-black'>
                         <form onSubmit={(e) => {
                             e.preventDefault();
                             console.log(uniquecode);
                             
                         }}>
-                            <h1 className='text-2xl font-extrabold tracking-wider leading-7 my-2.5 pl-16'>Verify Certificate</h1>
-                            <span className='pl-20 m-2 font-semibold'>Please enter The code</span>
+                            <h1 className='text-2xl font-extrabold tracking-widest leading-7 my-2.5 pl-16 mx-1'>Verify Certificate</h1>
+                            <span className='pl-20 m-2 font-semibold mx-4'>Please enter The code</span>
                             <input
-                                className='my-6 ml-14 items-center text-center px-3 rounded-lg py-1 bg-[#e5e5e5]'
+                                className='my-6 ml-10 items-center text-center rounded-lg bg-[#e5e5e5] w-3/4 p-2'
                                 type='text'
                                 placeholder='Unique Code'
                                 value={uniquecode}

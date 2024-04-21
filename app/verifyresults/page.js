@@ -50,8 +50,8 @@ const Page = () => {
         return (
             <div className='bg-black justify-center h-screen w-screen flex items-center justify-cente flex-col max-w-full'>
                 <svg width="80" height="80" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="#d38bfc">
-                    <g fill="none" fill-rule="evenodd">
-                        <g transform="translate(1 1)" stroke-width="2">
+                    <g fill="none" fillRule="evenodd">
+                        <g transform="translate(1 1)" strokeWidth="2">
                             <circle cx="5" cy="50" r="5">
                                 <animate attributeName="cy"
                                     begin="0s" dur="2.2s"
@@ -125,14 +125,14 @@ const Page = () => {
         return (
             <>
                 <div className='bg-[#000000] h-screen w-screen flex items-center justify-center flex-col max-w-full'>
-                    <div className="container bg-[#ffffff9f] rounded-3xl shadow-md relative w-[760px] max-w-full min-h-[480px] mt-44 overflow-y-auto">
-                        <h1 className='text-3xl font-extrabold tracking-wider items-center text-center p-7 text-black'>Certificate Details</h1>
-                        <div className='mx-14 space-y-12 font-mono rounded-3xl shadow-md bg-[#00000093] p-7'>
-                            <p><strong>Name:</strong> {certificateData.name}</p>
-                            <p><strong>Event:</strong> {certificateData.event}</p>
-                            <p><strong>Organization:</strong> {certificateData.organization}</p>
-                            <p><strong>Unique Code:</strong> {certificateData.unique_code}</p>
-                            <p><strong>Points:</strong> {certificateData.points}</p>
+                    <div className="container bg-[#24242480] rounded-3xl shadow-md relative w-[760px] max-w-full min-h-[480px] mt-20 overflow-y-auto">
+                        <h1 className='text-3xl font-extrabold items-center text-center p-7 text-white tracking-widest'>Certificate Details</h1>
+                        <div className='mx-14 space-y-12 font-mono rounded-3xl shadow-md bg-[#00000093] p-7 mb-10'>
+                            <p><strong className='text-xl tracking-wider'>Name:</strong> {certificateData.name}</p>
+                            <p><strong className='text-xl tracking-wider'>Event:</strong> {certificateData.event}</p>
+                            <p><strong className='text-xl tracking-wider'>Organization:</strong> {certificateData.organization}</p>
+                            <p><strong className='text-xl tracking-wider'>Unique Code:</strong> {certificateData.unique_code}</p>
+                            <p><strong className='text-xl tracking-wider'>Points:</strong> {certificateData.points}</p>
                             {/* Add more certificate details rendering here if needed */}
                         </div>
                     </div>

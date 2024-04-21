@@ -45,10 +45,11 @@ function NavBar() {
                 <Link href="/">
                     <Image
                         src={logo}
-                        className="relative"
-                        width={150}
-                        height={150}
+                        className="relative w-auto h-16"
+                        alt=""
+                        priority
                     />
+                    
                 </Link>
                 <div className="md:hidden" onClick={toggleExpand}>
                     <div className="space-y-1 cursor-pointer">
