@@ -2,7 +2,7 @@
 
 ![Checks Success](https://badgen.net/github/checks/node-formidable/node-formidable) [![MIT](https://badgen.net/badge/license/MIT/blue)](https://github.com/priyankarpal/ProjectsHut/blob/main/LICENSE)
 
-![projectshut](https://raw.githubusercontent.com/vishnuhari17/Certificate_verify/main/app/certverify.jpeg?token=GHSAT0AAAAAACPXPPR5VVKCH3VDFBBVJHXGZSDWAXA)
+![](https://raw.githubusercontent.com/vishnuhari17/Certificate_verify/main/app/certverify.jpeg?token=GHSAT0AAAAAACPXPPR5VVKCH3VDFBBVJHXGZSDWAXA)
 
 ## 🤓 What is it about ?
 
@@ -65,5 +65,5 @@ To all the contributors and supporters of this project, we want to express our s
 
 ## 🛡️ License
 
-ProjectsHut is licensed under the [MIT License ](https://github.com/vishnuhari17/Certificate_verify/blob/main/LICENSE)
+Certificate Verify is licensed under the [MIT License ](https://github.com/vishnuhari17/Certificate_verify/blob/main/LICENSE)
 
