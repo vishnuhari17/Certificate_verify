@@ -19,6 +19,7 @@
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-particles": "^2.12.2",
+    "react-pdf": "^8.0.2",
     "tsparticles": "^3.3.0"
   },
   "devDependencies": {

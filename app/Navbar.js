@@ -8,6 +8,7 @@ import {
     AiOutlineHome,
     AiOutlineFundProjectionScreen,
     AiOutlineUser,
+    AiOutlineDownload,
 } from "react-icons/ai";
 
 import logo from "./logo.png";
@@ -71,6 +72,13 @@ function NavBar() {
                             <Link href="/about" onClick={() => setExpand(false)}>
                                 <p className="flex items-center text-white hover:bg-white hover:text-black hover:rounded-md hover:shadow-md p-3 hover:font-medium">
                                     <AiOutlineUser className="mr-1" /> About
+                                </p>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/testcertificates" onClick={() => setExpand(false)}>
+                                <p className="flex items-center text-white hover:bg-white hover:text-black hover:rounded-md hover:shadow-md p-3 hover:font-medium">
+                                    <AiOutlineDownload className="mr-1" /> Test Certificates
                                 </p>
                             </Link>
                         </li>
