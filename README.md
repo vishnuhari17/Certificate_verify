@@ -1,4 +1,4 @@
-# **Certificate verify -- Verify your ceritificates Online🌎🌈**
+# **Certificate verify -- Verify your ceritificates Online💻📜**
 
 ![Checks Success](https://badgen.net/github/checks/node-formidable/node-formidable) [![MIT](https://badgen.net/badge/license/MIT/blue)](https://github.com/priyankarpal/ProjectsHut/blob/main/LICENSE)
 
