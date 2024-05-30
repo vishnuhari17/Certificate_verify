@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## 🤏 Prerequisites
 
-- Make sure you installed NodeJs in your system
+- Make sure you installed NodeJs in your system.
 - Also, you have installed npm.
 
 ## 🧰 Tech Stack Used
