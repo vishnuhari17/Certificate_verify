@@ -2,7 +2,7 @@
 
 [![MIT](https://badgen.net/badge/license/MIT/blue)](https://github.com/priyankarpal/ProjectsHut/blob/main/LICENSE)
 
-![](https://raw.githubusercontent.com/vishnuhari17/Certificate_verify/main/app/certverify.jpeg?token=GHSAT0AAAAAACPXPPR5VVKCH3VDFBBVJHXGZSDWAXA)
+![](https://raw.githubusercontent.com/vishnuhari17/Certificate_verify/main/app/certverify.jpeg)
 
 ## 🤓 What is it about ?
 
